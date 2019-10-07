@@ -1,0 +1,14 @@
+com/userorgmanagement/config/SwaggerConfig.class
+com/userorgmanagement/model/Organization.class
+com/userorgmanagement/seviceImpl/OrganizationServiceImplementation.class
+com/userorgmanagement/controller/UserController.class
+com/userorgmanagement/service/UserService.class
+com/userorgmanagement/dto/UserDTO.class
+com/userorgmanagement/service/OrganizationService.class
+com/userorgmanagement/repository/UserRepository.class
+com/userorgmanagement/dto/OrganizationDTO.class
+com/userorgmanagement/ManagementSpringApplication.class
+com/userorgmanagement/repository/OrganizationRepository.class
+com/userorgmanagement/model/User.class
+com/userorgmanagement/seviceImpl/UserServiceImplementation.class
+com/userorgmanagement/controller/OrganizationController.class
