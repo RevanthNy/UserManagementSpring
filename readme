@@ -1,0 +1,74 @@
+This is a simple application to demonstrate the functionality of a User and Organization management services with different end points
+
+* The application was created with Spring MVC with Java as programming language.
+* Database used was MySQL to store and retrieve data (default schema used is sample_data) run the command "create schema sample_data;" for schema creation
+* application.properties with the credentials of the database with default schema
+
+The application:
+* It has following packages:
+	1.com.userorgmanagement: This consists of the spring application which is the driver
+	
+	2.com.userorgmanagement.config: This is the class for configuring the swagger to access the API URL's for documenting an 
+									API with response code and response bodies. Run the application using the IDE or using terminal by traversing
+									to the project location using command line
+									
+									Note: Once the application runs on port 8080 access the API's below using 
+										  Postman or using swagger at "http://localhost:8080/swagger-ui.html#/"
+										  
+	3.com.userorgmanagement.controller: The consists of controller responsible for handling the input
+								 		requests and mapping them to provide response
+			API's are as follows:
+			* Create a single Organization : localhost:8080/organizations/createOrg
+				
+				sample request body 
+				{
+  					"address": "string",
+ 					"organizationName": "string",
+  					"phoneNo": "string"
+				}
+			
+			* Create a single User : localhost:8080/users/createUser
+			
+				{
+  					"address": "string",
+  					"emailId": "string",
+  					"firstName": "string",
+					"lastName": "string",
+  					"phoneNo": "string"
+				}
+			
+			* Add a User to an Organization : localhost:8080/organizations/addUser/{orgId}
+				-->provide organizationId as path variable and provide userId as request body. Response codes depend on the type of input provided
+				
+			* Delete a User from an Organization : localhost:8080/organizations/deleteUser/{orgId}
+				-->provide organizationId as path variable and provide userId as request body. Response codes depend on the type of input provided
+				
+			* Read all Users who belong to a specific Organization : localhost:8080/organizations/getAllUsers/{orgId}
+				-->provide organizationId as path variable to get all users in that organization. Response codes depend on the type of input provided
+				
+			* Read all Organizations to which a User belongs : localhost:8080/users/getAllOrganizations/{userId}
+				-->provide userId as path variable to get all organizations a user belongs to. Response codes depend on the type of input provided
+			
+			
+		
+	note: The API's can be tested using postman or swagger by providing proper request body
+	
+	4.com.userorgmanagement.dto: These are DTO objects that are used for data transfer between the controller and service without exposing the models
+								 * UserDTO and OrganizationDTO
+	
+	5.com.userorgmanagement.model: This consists of the model description with attributes
+		* User: id, firstname, last_name, phone, address, email (validations for email and phone no can be done for providing the actual services)
+		* Organization: id, address, name, phone
+		
+	6.com.userorgmanagement.repository: This consists of the repository for respective models to
+								 		interact with database and use custom methods and queries
+								 		
+	7.com.userorgmanagement.service: This is an interface that is used for service methods declaration
+	
+	8.com.userorgmanagement.serviceImpl: This is an actual package that consists the classes that implements interface methods of the service
+         
+Technologies used: 
+   *Programming Languages: Java, SQL
+   *Databases: MySQL
+   *Frameworks: Spring, Spring boot, JUnit
+   *Build and Version control: Maven, Git
